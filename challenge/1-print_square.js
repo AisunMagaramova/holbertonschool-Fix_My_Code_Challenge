@@ -1,24 +1,13 @@
-#!/usr/bin/node
-/*
-    Print a square with the character #
+#!/usr/bin/python3
+import sys
 
-    The size of the square must be the first argument
-    of the program.
-*/
+if len(sys.argv) <= 1:
+    sys.stderr.write("Missing argument\n")
+    sys.stderr.write("Usage: ./1-print_square.py <size>\n")
+    sys.stderr.write("Example: ./1-print_square.py 8\n")
+    sys.exit(1)
 
+size = int(sys.argv[1])
 
-if (process.argv.length <= 2) {
-    process.stderr.write("Missing argument\n");
-    process.stderr.write("Usage: ./1-print_square.js <size>\n");
-    process.stderr.write("Example: ./1-print_square.js 8\n");
-    process.exit(1)
-}
-
-size = parseInt(process.argv[2], 10)
-
-for (let i = 0 ; i < size ; i++) {
-    for (let j = 0 ; j < size ; j++) {
-        process.stdout.write("#");
-    }
-    process.stdout.write("\n");
-}
+for i in range(size):
+    print("#" * size)
